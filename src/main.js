@@ -4,9 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Mota Painting Services — Ultra-Smooth Cinematic Core Engine
+ * Santos Home Renovation — Core Engine
  */
-class MotaExperience {
+class SantosExperience {
   constructor() {
     this.heroSection = document.getElementById('hero');
     this.header = document.getElementById('site-header');
@@ -415,8 +415,8 @@ class MotaExperience {
       }
 
       // 3. Construct WhatsApp Pre-filled Message in American English
-      let message = `*NEW ESTIMATE REQUEST — MOTA PAINTING SERVICES*\n\n` +
-        `Hello! I'd like to request a free estimate for my project.\n\n` +
+      let message = `*NEW CONSULTATION REQUEST — SANTOS HOME RENOVATION*\n\n` +
+        `Hello! I would like to schedule a consultation for my home renovation project.\n\n` +
         `*CUSTOMER INFORMATION*\n\n` +
         `Name: ${name}\n` +
         `Email: ${email}\n` +
@@ -438,10 +438,10 @@ class MotaExperience {
         message += `\n*PROJECT DETAILS*\n${details}\n`;
       }
 
-      message += `\nThank you! I look forward to hearing from your team.`;
+      message += `\nThank you! I look forward to speaking with Santos Home Renovation.`;
 
       // Official WhatsApp Click-to-Chat URL
-      const whatsappUrl = `https://wa.me/19548560488?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/18573467894?text=${encodeURIComponent(message)}`;
 
       // 4. Subtle visual feedback on button
       if (submitBtn) {
@@ -473,5 +473,5 @@ class MotaExperience {
 
 // Instantiate on DOM load
 window.addEventListener('DOMContentLoaded', () => {
-  new MotaExperience();
+  new SantosExperience();
 });
