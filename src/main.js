@@ -4,75 +4,26 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Santos Home Renovation — Luxury Navy Architectural Experience
+ * Santos Home Renovation — High-Fidelity Reference Experience Engine
  */
-class SantosLuxuryExperience {
+class SantosReferenceSite {
   constructor() {
-    this.header = document.getElementById('site-header');
-    this.currentProjectIndex = 0;
-    this.projects = [
-      {
-        title: "A Refined Kitchen Transformation",
-        category: "Kitchen Remodeling",
-        description: "Explore the design details, materials, and craftsmanship that define a beautifully renovated kitchen. Custom shaker cabinetry, quartz countertops, and brass fixtures.",
-        image: "/assets/images/service-kitchen.jpg",
-        location: "Newton, MA"
-      },
-      {
-        title: "Master Suite & Spa Bathroom",
-        category: "Bathroom Remodeling",
-        description: "Custom floor-to-ceiling porcelain tile, walk-in curbless shower, double vanity in natural oak, and radiant heat flooring.",
-        image: "/assets/images/service-bathroom.jpg",
-        location: "Brookline, MA"
-      },
-      {
-        title: "Architectural Hardwood & Tile Craft",
-        category: "Flooring & Tile",
-        description: "Wide-plank white oak flooring installation combined with custom herringbone tile transitions for living and entryway spaces.",
-        image: "/assets/images/service-flooring.jpg",
-        location: "Cambridge, MA"
-      },
-      {
-        title: "Custom Trim & Architectural Millwork",
-        category: "Carpentry & Finish Work",
-        description: "Crown molding, custom coffered ceilings, wainscoting, and precise door casings that bring classical New England elegance.",
-        image: "/assets/images/service-carpentry.jpg",
-        location: "Wellesley, MA"
-      }
-    ];
-
     this.init();
   }
 
   init() {
-    this.initHeader();
     this.initMobileMenu();
-    this.initHeroEntrance();
-    this.initProjectSlider();
-    this.initProcessAnimation();
-    this.initFaqAccordion();
+    this.initHeadlineAnim();
+    this.initExpandableGallery();
+    this.initStickyNarrative();
+    this.initBeforeAfter();
+    this.initFaq();
     this.initContactForm();
-    this.initScrollSpy();
     this.initSmoothScroll();
   }
 
   /**
-   * Header background scroll listener
-   */
-  initHeader() {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        this.header?.classList.add('scrolled');
-      } else {
-        this.header?.classList.remove('scrolled');
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-  }
-
-  /**
-   * Mobile luxury drawer
+   * Mobile Hamburger & Full Drawer
    */
   initMobileMenu() {
     const toggleBtn = document.getElementById('mobile-menu-toggle');
@@ -83,13 +34,13 @@ class SantosLuxuryExperience {
     if (!toggleBtn || !drawer) return;
 
     const openMenu = () => {
-      drawer.classList.add('active');
+      drawer.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       toggleBtn.setAttribute('aria-expanded', 'true');
     };
 
     const closeMenu = () => {
-      drawer.classList.remove('active');
+      drawer.classList.add('hidden');
       document.body.style.overflow = '';
       toggleBtn.setAttribute('aria-expanded', 'false');
     };
@@ -97,113 +48,173 @@ class SantosLuxuryExperience {
     toggleBtn.addEventListener('click', openMenu);
     if (closeBtn) closeBtn.addEventListener('click', closeMenu);
     links.forEach(l => l.addEventListener('click', closeMenu));
+  }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && drawer.classList.contains('active')) {
-        closeMenu();
+  /**
+   * Word-by-word headline reveal
+   */
+  initHeadlineAnim() {
+    gsap.from('.hero-word', {
+      opacity: 0,
+      y: 28,
+      stagger: 0.08,
+      duration: 0.85,
+      ease: 'power3.out',
+      delay: 0.1
+    });
+  }
+
+  /**
+   * Expandable Horizontal Work Gallery
+   */
+  initExpandableGallery() {
+    const items = document.querySelectorAll('.exp-gallery-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  }
+
+  /**
+   * Section 5: Sticky Step-by-Step Narrative
+   */
+  initStickyNarrative() {
+    const steps = [
+      {
+        num: "01",
+        title: "Project Assessment & Site Evaluation",
+        desc: "We examine the existing structure, evaluate framing, plumbing and electrical conditions, and establish clear measurements.",
+        img: "/assets/images/service-drywall.jpg"
+      },
+      {
+        num: "02",
+        title: "Preparation, Protection & Demolition",
+        desc: "Floors, adjacent walls and living areas are fully sealed with heavy-duty plastic and ram board before structural demolition begins.",
+        img: "/assets/images/service-carpentry.jpg"
+      },
+      {
+        num: "03",
+        title: "Rough Framing, MEP & Subfloor Prep",
+        desc: "Precision carpentry, subfloor leveling, and rough mechanicals are installed according to Massachusetts building codes.",
+        img: "/assets/images/service-flooring.jpg"
+      },
+      {
+        num: "04",
+        title: "Custom Finishes, Tile & Cabinetry",
+        desc: "Handcrafted trim, custom cabinetry, waterproof tile systems, and flawless drywall surfaces are installed with care.",
+        img: "/assets/images/service-bathroom.jpg"
+      },
+      {
+        num: "05",
+        title: "Final Walkthrough & Quality Sign-Off",
+        desc: "We perform a room-by-room inspection with the homeowner to ensure every fixture, trim seam, and paint line is 100% perfect.",
+        img: "/assets/images/service-kitchen.jpg"
+      }
+    ];
+
+    const stickySection = document.getElementById('sticky-narrative');
+    const imageEl = document.getElementById('narrative-img');
+    const stepItems = document.querySelectorAll('.narrative-step-item');
+    const barEl = document.getElementById('narrative-progress-bar');
+    const badgeEl = document.getElementById('narrative-badge');
+
+    if (!stickySection || !imageEl) return;
+
+    ScrollTrigger.create({
+      trigger: stickySection,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const index = Math.min(Math.floor(progress * steps.length), steps.length - 1);
+
+        if (barEl) barEl.style.height = `${progress * 100}%`;
+        if (badgeEl) badgeEl.textContent = `0${index + 1} / 0${steps.length}`;
+
+        stepItems.forEach((item, i) => {
+          if (i === index) {
+            item.classList.add('text-brand-900', 'font-bold');
+            item.classList.remove('opacity-50');
+          } else {
+            item.classList.remove('text-brand-900', 'font-bold');
+            item.classList.add('opacity-50');
+          }
+        });
+
+        if (imageEl.getAttribute('data-index') !== String(index)) {
+          imageEl.setAttribute('data-index', String(index));
+          imageEl.src = steps[index].img;
+        }
       }
     });
   }
 
   /**
-   * Refined Hero Entrance
+   * Before & After Interactive Comparison Slider
    */
-  initHeroEntrance() {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  initBeforeAfter() {
+    const container = document.getElementById('ba-slider-container');
+    const beforeWrap = document.getElementById('ba-before-wrap');
+    const handle = document.getElementById('ba-handle');
 
-    tl.from('.hero-content-anim > *', {
-      opacity: 0,
-      y: 24,
-      stagger: 0.12,
-      duration: 0.9,
-      delay: 0.1
-    })
-    .from('.hero-differentiators', {
-      opacity: 0,
-      y: 16,
-      duration: 0.7
-    }, '-=0.4');
-  }
+    if (!container || !beforeWrap || !handle) return;
 
-  /**
-   * Featured Project Interactive Slider
-   */
-  initProjectSlider() {
-    const prevBtn = document.getElementById('project-prev');
-    const nextBtn = document.getElementById('project-next');
-    const counter = document.getElementById('project-counter');
-    const imageEl = document.getElementById('project-image');
-    const titleEl = document.getElementById('project-title');
-    const descEl = document.getElementById('project-desc');
-    const catEl = document.getElementById('project-cat');
+    let isDown = false;
 
-    if (!counter || !imageEl || !titleEl) return;
-
-    const updateProject = (newIndex) => {
-      this.currentProjectIndex = (newIndex + this.projects.length) % this.projects.length;
-      const proj = this.projects[this.currentProjectIndex];
-
-      gsap.to([imageEl, titleEl, descEl], {
-        opacity: 0,
-        duration: 0.2,
-        ease: 'power2.in',
-        onComplete: () => {
-          imageEl.src = proj.image;
-          titleEl.textContent = proj.title;
-          if (descEl) descEl.textContent = proj.description;
-          if (catEl) catEl.textContent = proj.category;
-          counter.textContent = `0${this.currentProjectIndex + 1} / 0${this.projects.length}`;
-
-          gsap.to([imageEl, titleEl, descEl], {
-            opacity: 1,
-            duration: 0.35,
-            ease: 'power2.out'
-          });
-        }
-      });
+    const setPosition = (clientX) => {
+      const rect = container.getBoundingClientRect();
+      let x = clientX - rect.left;
+      if (x < 0) x = 0;
+      if (x > rect.width) x = rect.width;
+      const pct = (x / rect.width) * 100;
+      beforeWrap.style.width = `${pct}%`;
+      handle.style.left = `${pct}%`;
     };
 
-    prevBtn?.addEventListener('click', () => updateProject(this.currentProjectIndex - 1));
-    nextBtn?.addEventListener('click', () => updateProject(this.currentProjectIndex + 1));
-  }
-
-  /**
-   * Timeline entrance reveal
-   */
-  initProcessAnimation() {
-    gsap.from('.process-step', {
-      scrollTrigger: {
-        trigger: '#process',
-        start: 'top 75%',
-        toggleActions: 'play none none none'
-      },
-      opacity: 0,
-      y: 30,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: 'power3.out'
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      setPosition(e.clientX);
     });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      setPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => { isDown = false; });
+
+    container.addEventListener('touchstart', (e) => {
+      if (e.touches[0]) setPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    container.addEventListener('touchmove', (e) => {
+      if (e.touches[0]) setPosition(e.touches[0].clientX);
+    }, { passive: true });
   }
 
   /**
    * FAQ Accordion
    */
-  initFaqAccordion() {
-    const items = document.querySelectorAll('.luxury-faq-item');
-
+  initFaq() {
+    const items = document.querySelectorAll('.ref-faq-item');
     items.forEach(item => {
-      const trigger = item.querySelector('.luxury-faq-trigger');
-      const content = item.querySelector('.luxury-faq-content');
+      const btn = item.querySelector('.ref-faq-trigger');
+      const content = item.querySelector('.ref-faq-content');
 
-      if (!trigger || !content) return;
+      if (!btn || !content) return;
 
-      trigger.addEventListener('click', () => {
+      btn.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
 
         items.forEach(other => {
           if (other !== item && other.classList.contains('active')) {
             other.classList.remove('active');
-            const oc = other.querySelector('.luxury-faq-content');
+            const oc = other.querySelector('.ref-faq-content');
             if (oc) oc.style.maxHeight = null;
           }
         });
@@ -220,79 +231,42 @@ class SantosLuxuryExperience {
   }
 
   /**
-   * Contact Form -> WhatsApp
+   * Contact Form WhatsApp Integration
    */
   initContactForm() {
-    const form = document.getElementById('luxury-contact-form');
+    const form = document.getElementById('ref-contact-form');
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('form-name')?.value.trim() || '';
-      const phone = document.getElementById('form-phone')?.value.trim() || '';
-      const email = document.getElementById('form-email')?.value.trim() || '';
-      const service = document.getElementById('form-service')?.value || 'Home Renovation';
-      const city = document.getElementById('form-city')?.value.trim() || 'Massachusetts';
-      const notes = document.getElementById('form-notes')?.value.trim() || '';
+      const name = document.getElementById('ref-name')?.value.trim() || '';
+      const phone = document.getElementById('ref-phone')?.value.trim() || '';
+      const email = document.getElementById('ref-email')?.value.trim() || '';
+      const city = document.getElementById('ref-city')?.value.trim() || '';
+      const service = document.getElementById('ref-service')?.value || 'Home Renovation';
+      const notes = document.getElementById('ref-notes')?.value.trim() || '';
 
-      const text = `Hello Santos Home Renovation!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Service:* ${encodeURIComponent(service)}%0A*Location:* ${encodeURIComponent(city)}%0A*Project Scope:* ${encodeURIComponent(notes)}`;
+      const text = `Hello Santos Home Renovation!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Location:* ${encodeURIComponent(city)}%0A*Service Required:* ${encodeURIComponent(service)}%0A*Project Scope:* ${encodeURIComponent(notes)}`;
 
       window.open(`https://wa.me/18573467894?text=${text}`, '_blank');
     });
   }
 
   /**
-   * Scrollspy for Header
-   */
-  initScrollSpy() {
-    const navLinks = document.querySelectorAll('.luxury-nav-link');
-    const sections = ['hero', 'services', 'featured-project', 'about', 'process', 'faq', 'contact'];
-
-    const onScroll = () => {
-      let current = 'hero';
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            current = id;
-            break;
-          }
-        }
-      }
-
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${current}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  /**
-   * Smooth link scrolling
+   * Smooth Anchor Scroll
    */
   initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
         if (target) {
           e.preventDefault();
-          const headerHeight = 78;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          window.scrollTo({
-            top,
-            behavior: 'smooth'
-          });
+          const offset = 84;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
@@ -300,5 +274,5 @@ class SantosLuxuryExperience {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new SantosLuxuryExperience();
+  new SantosReferenceSite();
 });
