@@ -8,172 +8,189 @@
   
   <link rel="icon" type="image/png" href="/assets/images/santos-logo.png" />
   
-  <!-- Cormorant Garamond (Editorial Serif) & Manrope (Sans-serif) -->
+  <!-- Modern Geometric Typography: Montserrat (Headings & Luxury Brand) & Inter (Clean Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="/src/style.css" />
 </head>
-<body class="bg-[#0B1725] text-[#F5F1E9] antialiased selection:bg-[#D5AD61] selection:text-[#0B1725]">
+<body class="bg-[#0B1725] text-[#F5F1E9] antialiased selection:bg-[#D5AD61] selection:text-[#0B1725] font-montserrat">
 
-  <!-- ==================== 03. HEADER DESKTOP ==================== -->
-  <header id="site-header" class="luxury-header fixed top-0 left-0 w-full z-50 bg-[#0B1725]/80 backdrop-blur-md border-b border-[#D5AD61]/15 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-[76px] lg:h-[82px] flex items-center justify-between">
+  <!-- ==================== 03. HEADER DESKTOP & MOBILE ==================== -->
+  <header id="site-header" class="luxury-header fixed top-0 left-0 w-full z-50 bg-[#0B1725]/85 backdrop-blur-md border-b border-[#D5AD61]/15 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-[72px] sm:h-[78px] lg:h-[82px] flex items-center justify-between">
       
       <!-- Left: Official Santos Logo -->
       <a href="#hero" class="flex items-center transition-opacity duration-200 hover:opacity-90">
         <img 
           src="/assets/images/santos-logo.png" 
           alt="Santos Home Renovation" 
-          class="h-9 sm:h-11 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_8px_rgba(213,173,97,0.3)]" 
+          class="h-8 sm:h-10 lg:h-11 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_8px_rgba(213,173,97,0.3)]" 
         />
       </a>
 
-      <!-- Center: Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 lg:gap-10">
-        <a href="#hero" class="luxury-nav-link text-[13px] tracking-[0.14em] uppercase font-medium text-white/90 hover:text-[#D5AD61] active">
+      <!-- Center: Navigation Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-7 lg:gap-10">
+        <a href="#hero" class="luxury-nav-link text-[12.5px] lg:text-[13px] tracking-[0.14em] uppercase font-semibold text-white/90 hover:text-[#D5AD61] active">
           Home
         </a>
-        <a href="#services" class="luxury-nav-link text-[13px] tracking-[0.14em] uppercase font-medium text-white/90 hover:text-[#D5AD61]">
+        <a href="#services" class="luxury-nav-link text-[12.5px] lg:text-[13px] tracking-[0.14em] uppercase font-semibold text-white/90 hover:text-[#D5AD61]">
           Services
         </a>
-        <a href="#featured-project" class="luxury-nav-link text-[13px] tracking-[0.14em] uppercase font-medium text-white/90 hover:text-[#D5AD61]">
+        <a href="#featured-project" class="luxury-nav-link text-[12.5px] lg:text-[13px] tracking-[0.14em] uppercase font-semibold text-white/90 hover:text-[#D5AD61]">
           Our Work
         </a>
-        <a href="#about" class="luxury-nav-link text-[13px] tracking-[0.14em] uppercase font-medium text-white/90 hover:text-[#D5AD61]">
+        <a href="#about" class="luxury-nav-link text-[12.5px] lg:text-[13px] tracking-[0.14em] uppercase font-semibold text-white/90 hover:text-[#D5AD61]">
           About
         </a>
-        <a href="#contact" class="luxury-nav-link text-[13px] tracking-[0.14em] uppercase font-medium text-white/90 hover:text-[#D5AD61]">
+        <a href="#contact" class="luxury-nav-link text-[12.5px] lg:text-[13px] tracking-[0.14em] uppercase font-semibold text-white/90 hover:text-[#D5AD61]">
           Contact
         </a>
       </nav>
 
-      <!-- Right: Champagne Gold CTA -->
+      <!-- Right: Champagne Gold CTA (Desktop) -->
       <div class="hidden md:flex items-center">
         <a 
           href="https://wa.me/18573467894?text=Hello%20Santos%20Home%20Renovation%2C%20I%20would%20like%20to%20schedule%20a%20consultation." 
           target="_blank" 
           rel="noopener noreferrer"
-          class="btn-luxury-gold px-6 py-2.5 text-[12px] tracking-[0.1em] uppercase gap-2 font-semibold"
+          class="btn-luxury-gold px-6 py-2.5 text-[11.5px] tracking-[0.12em] uppercase gap-2 font-bold"
         >
           <span>Schedule a Consultation</span>
           <span class="text-sm">→</span>
         </a>
       </div>
 
-      <!-- Mobile Hamburger Button (Minimalist lines) -->
+      <!-- New Refined Luxury Hamburger Pill Button (Mobile) -->
       <button 
         id="mobile-menu-toggle"
-        class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none"
+        class="md:hidden hamburger-pill-btn flex items-center gap-2 px-3.5 py-2 focus:outline-none"
         aria-label="Toggle navigation menu"
         aria-expanded="false"
       >
-        <span class="w-6 h-[1.5px] bg-[#F5F1E9] transition-all"></span>
-        <span class="w-4 h-[1.5px] bg-[#D5AD61] ml-auto transition-all"></span>
-        <span class="w-6 h-[1.5px] bg-[#F5F1E9] transition-all"></span>
+        <span class="text-[10px] tracking-[0.14em] font-bold uppercase text-[#D5AD61]">Menu</span>
+        <div class="flex flex-col gap-1 w-4 justify-center">
+          <span class="w-4 h-[1.5px] bg-white rounded-full transition-all"></span>
+          <span class="w-2.5 h-[1.5px] bg-[#D5AD61] ml-auto rounded-full transition-all"></span>
+          <span class="w-4 h-[1.5px] bg-white rounded-full transition-all"></span>
+        </div>
       </button>
 
     </div>
   </header>
 
-  <!-- ==================== 12. MOBILE MENU DRAWER ==================== -->
+  <!-- ==================== MOBILE MENU DRAWER (UPGRADED) ==================== -->
   <div 
     id="mobile-menu-drawer" 
-    class="luxury-mobile-drawer fixed inset-0 z-[9999] bg-[#0B1725] flex flex-col justify-between px-6 py-8 sm:px-10 overflow-y-auto"
+    class="luxury-mobile-drawer fixed inset-0 z-[9999] bg-[#0B1725] flex flex-col justify-between px-6 py-7 overflow-y-auto"
   >
-    <div class="flex items-center justify-between border-b border-[#D5AD61]/20 pb-5">
-      <img src="/assets/images/santos-logo.png" alt="Santos Home Renovation" class="h-9 w-auto object-contain brightness-0 invert" />
+    <!-- Top Bar inside Drawer -->
+    <div class="flex items-center justify-between border-b border-[#D5AD61]/20 pb-4">
+      <img src="/assets/images/santos-logo.png" alt="Santos Home Renovation" class="h-8 w-auto object-contain brightness-0 invert" />
       <button 
         id="mobile-menu-close" 
-        class="w-10 h-10 flex items-center justify-center text-[#F5F1E9] hover:text-[#D5AD61] transition-colors"
+        class="hamburger-pill-btn flex items-center gap-1.5 px-3 py-1.5 text-xs text-[#F5F1E9] hover:text-[#D5AD61] transition-colors"
         aria-label="Close menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+        <span class="text-[10px] tracking-[0.12em] uppercase font-bold text-[#D5AD61]">Close</span>
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </div>
 
-    <nav class="flex flex-col gap-6 my-auto py-8">
-      <a href="#hero" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        01 / Home
+    <!-- Navigation List (Gotham/Montserrat Style) -->
+    <nav class="flex flex-col gap-5 my-auto py-6">
+      <a href="#hero" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">01</span>
+        <span>HOME</span>
       </a>
-      <a href="#services" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        02 / Services
+      <a href="#services" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">02</span>
+        <span>SERVICES</span>
       </a>
-      <a href="#featured-project" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        03 / Our Work
+      <a href="#featured-project" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">03</span>
+        <span>OUR WORK</span>
       </a>
-      <a href="#about" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        04 / About Santos
+      <a href="#about" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">04</span>
+        <span>ABOUT US</span>
       </a>
-      <a href="#process" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        05 / Our Process
+      <a href="#process" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">05</span>
+        <span>OUR PROCESS</span>
       </a>
-      <a href="#contact" class="mobile-menu-link text-2xl font-cormorant tracking-wide text-white hover:text-[#D5AD61] transition-colors">
-        06 / Contact
+      <a href="#contact" class="mobile-menu-link flex items-baseline gap-3 text-2xl font-bold tracking-tight text-white hover:text-[#D5AD61] transition-colors">
+        <span class="text-xs font-mono text-[#D5AD61] font-semibold">06</span>
+        <span>CONTACT</span>
       </a>
     </nav>
 
-    <div class="border-t border-[#D5AD61]/20 pt-6 flex flex-col gap-4">
+    <!-- Drawer Footer -->
+    <div class="border-t border-[#D5AD61]/20 pt-5 flex flex-col gap-3">
       <a 
         href="https://wa.me/18573467894?text=Hello%20Santos%20Home%20Renovation%2C%20I%20would%20like%20to%20schedule%20a%20consultation." 
         target="_blank" 
         rel="noopener noreferrer"
-        class="btn-luxury-gold w-full py-3.5 text-center text-xs tracking-[0.12em] uppercase font-semibold text-[#0B1725]"
+        class="btn-luxury-gold w-full py-3.5 text-center text-xs tracking-[0.14em] uppercase font-bold text-[#0B1725]"
       >
         Schedule a Consultation →
       </a>
-      <div class="flex items-center justify-between text-xs text-[#A9B1BA] pt-2">
+      <div class="flex items-center justify-between text-[11px] text-[#A9B1BA] pt-1">
         <span>+1 (857) 346-7894</span>
         <a href="https://instagram.com/homereno.santos" target="_blank" rel="noopener noreferrer" class="hover:text-[#D5AD61]">@homereno.santos</a>
       </div>
     </div>
   </div>
 
-  <!-- ==================== 04. HERO CINEMATOGRÁFICA (90–100vh) ==================== -->
-  <section id="hero" class="relative min-h-[92vh] lg:min-h-screen flex items-center pt-[90px] pb-16 overflow-hidden">
+  <!-- ==================== 04. HERO CINEMATOGRÁFICA (MOBILE OTIMIZADA) ==================== -->
+  <section id="hero" class="relative min-h-[92vh] lg:min-h-screen flex items-end lg:items-center pt-[110px] sm:pt-[120px] pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
     
-    <!-- Background Image: Massachusetts Contemporary Architecture aligned right -->
+    <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img 
         src="/assets/images/hero-house.jpg" 
         alt="Luxury New England Residential Home Architecture" 
-        class="w-full h-full object-cover object-right lg:object-center"
+        class="w-full h-full object-cover object-top sm:object-center lg:object-right"
       />
-      <!-- Luxury Navy Gradient: Left to Center dark navy wash, softer to the right -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0B1725] via-[#0B1725]/85 to-[#0B1725]/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1725] via-transparent to-[#0B1725]/50"></div>
+      <!-- Adaptive Gradient: On mobile, heavy dark overlay on bottom so text is crystal clear below the house -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1725] via-[#0B1725]/80 to-[#0B1725]/30 lg:hidden"></div>
+      <div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0B1725] via-[#0B1725]/85 to-[#0B1725]/30"></div>
+      <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-[#0B1725] via-transparent to-[#0B1725]/50"></div>
     </div>
 
-    <!-- Hero Content Container -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <!-- Hero Content Container (Positioned lower on mobile with perfect spacing) -->
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full pt-16 sm:pt-24 lg:pt-0">
       <div class="max-w-2xl hero-content-anim">
         
-        <!-- Eyebrow -->
-        <span class="text-xs sm:text-sm font-manrope font-semibold tracking-[0.2em] uppercase text-[#D5AD61] block mb-4">
-          PREMIUM HOME RENOVATION SERVICES
-        </span>
+        <!-- Eyebrow Tag -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#11263A]/80 border border-[#D5AD61]/30 rounded-full mb-4 sm:mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#D5AD61]"></span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-[0.18em] uppercase text-[#D5AD61]">
+            Premium Home Renovation
+          </span>
+        </div>
 
-        <!-- Headline: Transforming Homes With Precision & Style. -->
-        <h1 class="text-4xl sm:text-5xl lg:text-[4.25rem] font-cormorant font-normal text-[#F5F1E9] leading-[1.08] tracking-tight mb-6">
+        <!-- Headline in Bold Modern Montserrat/Gotham Style -->
+        <h1 class="text-3xl sm:text-5xl lg:text-[4rem] font-extrabold text-[#F5F1E9] leading-[1.12] tracking-tight mb-4 sm:mb-6">
           Transforming Homes <br />
-          With <span class="text-[#D5AD61] italic font-normal">Precision & Style.</span>
+          With <span class="text-[#D5AD61] font-semibold italic">Precision & Style.</span>
         </h1>
 
         <!-- Subheadline -->
-        <p class="text-base sm:text-lg font-manrope text-[#A9B1BA] leading-relaxed mb-8 max-w-xl font-light">
+        <p class="text-sm sm:text-base lg:text-lg text-[#A9B1BA] leading-relaxed mb-6 sm:mb-8 max-w-xl font-normal font-inter">
           High-quality remodeling and renovation services designed to elevate homes across Massachusetts, Rhode Island, and New Hampshire.
         </p>
 
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-14">
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
           <a 
             href="https://wa.me/18573467894?text=Hello%20Santos%20Home%20Renovation%2C%20I%20would%20like%20to%20schedule%20a%20consultation." 
             target="_blank" 
             rel="noopener noreferrer"
-            class="btn-luxury-gold px-8 py-3.5 text-xs tracking-[0.14em] uppercase font-semibold"
+            class="btn-luxury-gold px-7 py-3.5 text-xs tracking-[0.14em] uppercase font-bold text-center"
           >
             <span>Schedule a Consultation</span>
             <span class="ml-2">→</span>
@@ -181,45 +198,45 @@
 
           <a 
             href="#featured-project" 
-            class="btn-luxury-outline px-8 py-3.5 text-xs tracking-[0.14em] uppercase font-medium"
+            class="btn-luxury-outline px-7 py-3.5 text-xs tracking-[0.14em] uppercase font-semibold text-center"
           >
             <span>View Our Work</span>
             <span class="ml-2">→</span>
           </a>
         </div>
 
-        <!-- Hero Bottom Differentiators (3 Horizontal Points with Thin Separators) -->
-        <div class="hero-differentiators pt-6 border-t border-[#D5AD61]/25 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <!-- Hero Bottom Differentiators (Optimized stack on mobile, horizontal on desktop) -->
+        <div class="hero-differentiators pt-5 sm:pt-6 border-t border-[#D5AD61]/20 grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-6 bg-[#0B1725]/60 sm:bg-transparent p-4 sm:p-0 rounded-lg sm:rounded-none backdrop-blur-sm sm:backdrop-blur-none">
           
           <div class="flex items-center gap-3">
-            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
             <div>
-              <span class="block text-xs font-semibold text-white uppercase tracking-wider">10+ Years</span>
-              <span class="text-[11px] text-[#A9B1BA]">Field Experience</span>
+              <span class="block text-xs font-bold text-white uppercase tracking-wider">10+ Years</span>
+              <span class="text-[11px] text-[#A9B1BA] font-inter">Field Experience</span>
             </div>
           </div>
 
           <div class="flex items-center gap-3 sm:border-l sm:border-[#D5AD61]/20 sm:pl-6">
-            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
             <div>
-              <span class="block text-xs font-semibold text-white uppercase tracking-wider">Quality</span>
-              <span class="text-[11px] text-[#A9B1BA]">Craftsmanship</span>
+              <span class="block text-xs font-bold text-white uppercase tracking-wider">Quality</span>
+              <span class="text-[11px] text-[#A9B1BA] font-inter">Craftsmanship</span>
             </div>
           </div>
 
           <div class="flex items-center gap-3 sm:border-l sm:border-[#D5AD61]/20 sm:pl-6">
-            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <svg class="w-5 h-5 text-[#D5AD61] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
             <div>
-              <span class="block text-xs font-semibold text-white uppercase tracking-wider">Attention</span>
-              <span class="text-[11px] text-[#A9B1BA]">To Every Detail</span>
+              <span class="block text-xs font-bold text-white uppercase tracking-wider">Attention</span>
+              <span class="text-[11px] text-[#A9B1BA] font-inter">To Every Detail</span>
             </div>
           </div>
 
@@ -229,109 +246,109 @@
     </div>
   </section>
 
-  <!-- ==================== 05. OUR SERVICES — GRID DE ÍCONES PREMIUM ==================== -->
-  <section id="services" class="py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <!-- ==================== 05. OUR SERVICES ==================== -->
+  <section id="services" class="py-16 sm:py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       
       <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Our Services</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cormorant font-normal text-[#F5F1E9] tracking-tight mb-4">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Our Services</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F1E9] tracking-tight mb-3 sm:mb-4">
           Comprehensive Renovation Solutions
         </h2>
-        <p class="text-sm sm:text-base text-[#A9B1BA] leading-relaxed">
+        <p class="text-xs sm:text-sm lg:text-base text-[#A9B1BA] leading-relaxed font-inter">
           From modern home upgrades to complete remodels, we provide professional services with careful attention to every detail.
         </p>
       </div>
 
-      <!-- Seven Services Organized Horizontally / Clean Cards Grid -->
+      <!-- Seven Services Organized: 2 cols on mobile, 4 on tablet, 7 on desktop -->
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
         
         <!-- 01: Kitchen Remodeling -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Kitchen Remodeling
           </h3>
         </a>
 
         <!-- 02: Bathroom Remodeling -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M9 6h6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
               <circle cx="12" cy="11" r="2"/>
               <path d="M12 2v4M12 18v4"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Bathroom Remodeling
           </h3>
         </a>
 
         <!-- 03: Flooring & Tile -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="3" y="3" width="18" height="18" rx="1"/>
               <path d="M3 12h18M12 3v18"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Flooring & Tile
           </h3>
         </a>
 
         <!-- 04: Interior & Exterior Painting -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="2" y="3" width="18" height="7" rx="1"/>
               <path d="M20 7v3a2 2 0 0 1-2 2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Painting Services
           </h3>
         </a>
 
         <!-- 05: Carpentry -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Carpentry & Trim
           </h3>
         </a>
 
         <!-- 06: Drywall -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M2 3h20v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3z"/>
               <path d="M8 21h8M12 17v4"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Drywall Installation
           </h3>
         </a>
 
         <!-- 07: Handyman Services -->
-        <a href="#featured-project" class="luxury-service-card p-5 flex flex-col items-center text-center group col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1">
-          <div class="w-12 h-12 flex items-center justify-center mb-3">
-            <svg class="w-7 h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <a href="#featured-project" class="luxury-service-card p-4 sm:p-5 flex flex-col items-center text-center group col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1">
+          <div class="w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center mb-2.5 sm:mb-3">
+            <svg class="w-6 sm:w-7 h-6 sm:h-7 service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
             </svg>
           </div>
-          <h3 class="text-xs sm:text-sm font-manrope font-semibold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
+          <h3 class="text-xs sm:text-sm font-bold text-white group-hover:text-[#D5AD61] transition-colors leading-snug">
             Handyman Services
           </h3>
         </a>
@@ -341,15 +358,15 @@
     </div>
   </section>
 
-  <!-- ==================== 06. FEATURED PROJECT — DESTAQUE ARQUITETÔNICO (55% / 45%) ==================== -->
-  <section id="featured-project" class="py-20 lg:py-28 bg-[#11263A] border-t border-[#D5AD61]/15">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <!-- ==================== 06. FEATURED PROJECT ==================== -->
+  <section id="featured-project" class="py-16 sm:py-20 lg:py-28 bg-[#11263A] border-t border-[#D5AD61]/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         
-        <!-- Left Column: Large Photography (55%) -->
+        <!-- Left: Image (Above on mobile) -->
         <div class="lg:col-span-7 relative">
-          <div class="aspect-[16/10] sm:aspect-[16/9] rounded overflow-hidden border border-[#D5AD61]/25 bg-[#0B1725] shadow-2xl">
+          <div class="aspect-[16/10] sm:aspect-[16/9] rounded-lg overflow-hidden border border-[#D5AD61]/25 bg-[#0B1725] shadow-2xl">
             <img 
               id="project-image"
               src="/assets/images/service-kitchen.jpg" 
@@ -359,24 +376,24 @@
           </div>
         </div>
 
-        <!-- Right Column: Editorial Content (45%) -->
-        <div class="lg:col-span-5 flex flex-col justify-between h-full">
+        <!-- Right: Editorial Content -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-3 mb-3">
-              <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block">
+            <div class="flex items-center gap-2 mb-2 sm:mb-3">
+              <span class="text-[11px] sm:text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block">
                 FEATURED PROJECT
               </span>
               <span class="text-xs text-[#A9B1BA]/60">·</span>
-              <span id="project-cat" class="text-xs text-[#A9B1BA] font-mono uppercase tracking-wider">
+              <span id="project-cat" class="text-[11px] sm:text-xs text-[#A9B1BA] font-mono uppercase tracking-wider">
                 Kitchen Remodeling
               </span>
             </div>
 
-            <h2 id="project-title" class="text-3xl sm:text-4xl lg:text-5xl font-cormorant font-normal text-[#F5F1E9] tracking-tight leading-tight mb-5">
+            <h2 id="project-title" class="text-2xl sm:text-4xl font-extrabold text-[#F5F1E9] tracking-tight leading-tight mb-4">
               A Refined Kitchen Transformation
             </h2>
 
-            <p id="project-desc" class="text-sm sm:text-base text-[#A9B1BA] leading-relaxed mb-8 font-light">
+            <p id="project-desc" class="text-xs sm:text-sm lg:text-base text-[#A9B1BA] leading-relaxed mb-6 font-inter font-normal">
               Explore the design details, materials, and craftsmanship that define a beautifully renovated kitchen. Custom shaker cabinetry, quartz countertops, and brass fixtures.
             </p>
 
@@ -384,33 +401,33 @@
               href="https://wa.me/18573467894?text=Hello%20Santos%20Home%20Renovation%2C%20I%20would%20like%20to%20view%20more%20details%20about%20your%20renovation%20projects." 
               target="_blank" 
               rel="noopener noreferrer"
-              class="btn-luxury-outline px-6 py-3 text-xs tracking-[0.14em] uppercase font-medium inline-flex items-center gap-2"
+              class="btn-luxury-outline px-6 py-3 text-xs tracking-[0.14em] uppercase font-bold inline-flex items-center gap-2"
             >
               <span>View Project</span>
               <span>→</span>
             </a>
           </div>
 
-          <!-- Slider Controls & Index Indicator (Bottom Right) -->
-          <div class="flex items-center justify-between pt-10 mt-8 border-t border-[#D5AD61]/20">
+          <!-- Slider Controls & Index Indicator -->
+          <div class="flex items-center justify-between pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-[#D5AD61]/20">
             <div class="flex items-center gap-2">
               <button 
                 id="project-prev" 
-                class="w-10 h-10 rounded border border-[#D5AD61]/30 flex items-center justify-center text-white hover:border-[#D5AD61] hover:text-[#D5AD61] transition-colors"
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded border border-[#D5AD61]/30 flex items-center justify-center text-white hover:border-[#D5AD61] hover:text-[#D5AD61] transition-colors"
                 aria-label="Previous project"
               >
                 ←
               </button>
               <button 
                 id="project-next" 
-                class="w-10 h-10 rounded border border-[#D5AD61]/30 flex items-center justify-center text-white hover:border-[#D5AD61] hover:text-[#D5AD61] transition-colors"
+                class="w-9 h-9 sm:w-10 sm:h-10 rounded border border-[#D5AD61]/30 flex items-center justify-center text-white hover:border-[#D5AD61] hover:text-[#D5AD61] transition-colors"
                 aria-label="Next project"
               >
                 →
               </button>
             </div>
 
-            <span id="project-counter" class="text-xs font-mono tracking-widest text-[#D5AD61] font-semibold">
+            <span id="project-counter" class="text-xs font-mono tracking-widest text-[#D5AD61] font-bold">
               01 / 04
             </span>
           </div>
@@ -422,55 +439,54 @@
     </div>
   </section>
 
-  <!-- ==================== 07. ABOUT SANTOS — SEÇÃO EDITORIAL (TEXTO ESQUERDA / FOTO DIREITA) ==================== -->
-  <section id="about" class="py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+  <!-- ==================== 07. ABOUT SANTOS ==================== -->
+  <section id="about" class="py-16 sm:py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         
-        <!-- Left: Editorial Content Block -->
-        <div class="lg:col-span-6 flex flex-col items-start">
-          <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">About Santos</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cormorant font-normal text-[#F5F1E9] tracking-tight mb-6 leading-tight">
+        <!-- Left: Content -->
+        <div class="lg:col-span-6 flex flex-col items-start order-2 lg:order-1">
+          <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">About Santos</span>
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F1E9] tracking-tight mb-4 sm:mb-6 leading-tight">
             A Renovation Partner <br />
-            <span class="text-[#D5AD61] italic">You Can Trust</span>
+            <span class="text-[#D5AD61] font-semibold italic">You Can Trust</span>
           </h2>
 
-          <p class="text-base text-[#A9B1BA] leading-relaxed mb-6 font-light">
+          <p class="text-sm sm:text-base text-[#A9B1BA] leading-relaxed mb-4 sm:mb-6 font-inter font-normal">
             Santos Home Renovation provides residential remodeling and home improvement services backed by over 10 years of experience, quality craftsmanship, and attention to detail.
           </p>
 
-          <p class="text-sm text-[#A9B1BA]/90 leading-relaxed mb-8 font-light">
+          <p class="text-xs sm:text-sm text-[#A9B1BA]/90 leading-relaxed mb-6 font-inter font-normal">
             We treat every home as a bespoke architectural project. From initial structural review to the final trim paint stroke, our Massachusetts team brings dependable communication and pristine standards.
           </p>
 
-          <!-- Differentiators with subtle gold checks -->
-          <div class="space-y-3 mb-8 w-full">
+          <div class="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8 w-full">
             <div class="flex items-center gap-3">
               <span class="w-4 h-4 rounded-full border border-[#D5AD61] flex items-center justify-center text-[10px] text-[#D5AD61]">✓</span>
-              <span class="text-sm font-manrope font-medium text-white">Over 10 Years of Experience</span>
+              <span class="text-xs sm:text-sm font-semibold text-white">Over 10 Years of Experience</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-4 h-4 rounded-full border border-[#D5AD61] flex items-center justify-center text-[10px] text-[#D5AD61]">✓</span>
-              <span class="text-sm font-manrope font-medium text-white">Quality Workmanship & Premium Materials</span>
+              <span class="text-xs sm:text-sm font-semibold text-white">Quality Workmanship & Premium Materials</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="w-4 h-4 rounded-full border border-[#D5AD61] flex items-center justify-center text-[10px] text-[#D5AD61]">✓</span>
-              <span class="text-sm font-manrope font-medium text-white">Attention to Every Detail & Respect for Your Home</span>
+              <span class="text-xs sm:text-sm font-semibold text-white">Attention to Every Detail & Respect for Your Home</span>
             </div>
           </div>
 
           <a 
             href="#contact" 
-            class="btn-luxury-outline px-7 py-3 text-xs tracking-[0.14em] uppercase font-medium inline-flex items-center gap-2"
+            class="btn-luxury-outline px-6 sm:px-7 py-3 text-xs tracking-[0.14em] uppercase font-bold inline-flex items-center gap-2"
           >
             <span>Learn More</span>
             <span>→</span>
           </a>
         </div>
 
-        <!-- Right: Large Photography (Residential interior with natural light) -->
-        <div class="lg:col-span-6 relative">
-          <div class="aspect-[4/3] sm:aspect-[16/11] rounded overflow-hidden border border-[#D5AD61]/25 bg-[#11263A] shadow-2xl">
+        <!-- Right: Image (Order 1 on mobile so visually top-to-bottom flows smoothly) -->
+        <div class="lg:col-span-6 relative order-1 lg:order-2">
+          <div class="aspect-[4/3] sm:aspect-[16/11] rounded-lg overflow-hidden border border-[#D5AD61]/25 bg-[#11263A] shadow-2xl">
             <img 
               src="/assets/images/about-contractor.jpg" 
               alt="Santos Home Renovation Living Space and Finished Craftsmanship" 
@@ -484,74 +500,71 @@
     </div>
   </section>
 
-  <!-- ==================== 08. OUR PROCESS — TIMELINE HORIZONTAL ==================== -->
-  <section id="process" class="py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <!-- ==================== 08. OUR PROCESS ==================== -->
+  <section id="process" class="py-16 sm:py-20 lg:py-28 bg-[#0B1725] border-t border-[#D5AD61]/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       
-      <!-- Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Our Process</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cormorant font-normal text-[#F5F1E9] tracking-tight">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Our Process</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F1E9] tracking-tight">
           A Streamlined Renovation Experience
         </h2>
       </div>
 
-      <!-- Horizontal Timeline (with circular gold numbers & connecting line) -->
       <div class="relative">
-        
-        <!-- Connecting Line (Desktop) -->
+        <!-- Connecting Line on Desktop -->
         <div class="hidden lg:block absolute top-6 left-12 right-12 h-[1px] bg-[#D5AD61]/25 z-0"></div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10">
           
           <!-- Step 01 -->
-          <div class="process-step flex flex-col items-start lg:items-center text-left lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-cormorant font-bold text-lg mb-5 shadow-lg">
+          <div class="process-step bg-[#11263A]/50 sm:bg-transparent p-5 sm:p-0 rounded-lg sm:rounded-none border border-[#D5AD61]/15 sm:border-0 flex flex-col items-start lg:items-center text-left lg:text-center">
+            <div class="w-11 sm:w-12 h-11 sm:h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-bold text-base sm:text-lg mb-4 shadow-lg">
               01
             </div>
-            <h3 class="text-xl font-cormorant font-semibold text-white mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
               Consultation
             </h3>
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-inter font-normal">
               We listen to your goals and discuss your renovation needs.
             </p>
           </div>
 
           <!-- Step 02 -->
-          <div class="process-step flex flex-col items-start lg:items-center text-left lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-cormorant font-bold text-lg mb-5 shadow-lg">
+          <div class="process-step bg-[#11263A]/50 sm:bg-transparent p-5 sm:p-0 rounded-lg sm:rounded-none border border-[#D5AD61]/15 sm:border-0 flex flex-col items-start lg:items-center text-left lg:text-center">
+            <div class="w-11 sm:w-12 h-11 sm:h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-bold text-base sm:text-lg mb-4 shadow-lg">
               02
             </div>
-            <h3 class="text-xl font-cormorant font-semibold text-white mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
               Plan & Design
             </h3>
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-inter font-normal">
               We review the project scope, materials, and next steps.
             </p>
           </div>
 
           <!-- Step 03 -->
-          <div class="process-step flex flex-col items-start lg:items-center text-left lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-cormorant font-bold text-lg mb-5 shadow-lg">
+          <div class="process-step bg-[#11263A]/50 sm:bg-transparent p-5 sm:p-0 rounded-lg sm:rounded-none border border-[#D5AD61]/15 sm:border-0 flex flex-col items-start lg:items-center text-left lg:text-center">
+            <div class="w-11 sm:w-12 h-11 sm:h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-bold text-base sm:text-lg mb-4 shadow-lg">
               03
             </div>
-            <h3 class="text-xl font-cormorant font-semibold text-white mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
               Build & Renovate
             </h3>
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-inter font-normal">
               The agreed renovation work is carried out with attention to craftsmanship and detail.
             </p>
           </div>
 
           <!-- Step 04 -->
-          <div class="process-step flex flex-col items-start lg:items-center text-left lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-cormorant font-bold text-lg mb-5 shadow-lg">
+          <div class="process-step bg-[#11263A]/50 sm:bg-transparent p-5 sm:p-0 rounded-lg sm:rounded-none border border-[#D5AD61]/15 sm:border-0 flex flex-col items-start lg:items-center text-left lg:text-center">
+            <div class="w-11 sm:w-12 h-11 sm:h-12 rounded-full bg-[#11263A] border border-[#D5AD61] flex items-center justify-center text-[#D5AD61] font-bold text-base sm:text-lg mb-4 shadow-lg">
               04
             </div>
-            <h3 class="text-xl font-cormorant font-semibold text-white mb-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
               Final Walkthrough
             </h3>
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-inter font-normal">
               We review the completed project and discuss the finishing details.
             </p>
           </div>
@@ -563,32 +576,26 @@
     </div>
   </section>
 
-  <!-- ==================== 09. FINAL CTA — LUXURY RENOVATION ==================== -->
-  <section class="py-16 lg:py-20 bg-[#11263A] border-y border-[#D5AD61]/25 relative overflow-hidden">
-    <!-- Subtle architectural texture -->
-    <div class="absolute inset-0 bg-[radial-gradient(#D5AD61_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+  <!-- ==================== 09. FINAL CTA ==================== -->
+  <section class="py-14 sm:py-16 lg:py-20 bg-[#11263A] border-y border-[#D5AD61]/25 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
         
-        <!-- Left: Headline -->
         <div class="lg:w-1/3">
-          <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-1">Get Started</span>
-          <h2 class="text-3xl sm:text-4xl font-cormorant font-normal text-white tracking-tight">
+          <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-1">Get Started</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             Let's Renovate Your Home.
           </h2>
         </div>
 
-        <!-- Center: Supporting Copy -->
-        <div class="lg:w-1/3 text-sm text-[#A9B1BA] leading-relaxed font-light">
+        <div class="lg:w-1/3 text-xs sm:text-sm text-[#A9B1BA] leading-relaxed font-inter font-normal">
           Ready to bring your vision to life? Schedule a consultation and tell us about your renovation goals.
         </div>
 
-        <!-- Right: Champagne Gold Button -->
         <div class="lg:w-1/3 flex lg:justify-end w-full sm:w-auto">
           <a 
             href="#contact" 
-            class="btn-luxury-gold px-8 py-3.5 text-xs tracking-[0.14em] uppercase font-semibold w-full sm:w-auto"
+            class="btn-luxury-gold px-8 py-3.5 text-xs tracking-[0.14em] uppercase font-bold w-full sm:w-auto text-center"
           >
             <span>Schedule a Consultation</span>
             <span class="ml-2">→</span>
@@ -599,12 +606,12 @@
     </div>
   </section>
 
-  <!-- ==================== FAQ ACCORDION (Integrated Luxury) ==================== -->
-  <section id="faq" class="py-20 bg-[#0B1725] border-b border-[#D5AD61]/15">
-    <div class="max-w-4xl mx-auto px-6 sm:px-8">
-      <div class="text-center mb-14">
-        <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">FAQ</span>
-        <h2 class="text-3xl sm:text-4xl font-cormorant font-normal text-white">
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section id="faq" class="py-16 sm:py-20 bg-[#0B1725] border-b border-[#D5AD61]/15">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-10 sm:mb-14">
+        <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">FAQ</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
           Frequently Asked Questions
         </h2>
       </div>
@@ -612,13 +619,13 @@
       <div class="space-y-2">
         <div class="luxury-faq-item py-4">
           <button class="luxury-faq-trigger w-full flex items-center justify-between text-left group">
-            <span class="font-manrope font-medium text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
+            <span class="font-bold text-sm sm:text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
               What home renovation services do you offer?
             </span>
             <span class="luxury-faq-icon text-lg text-[#D5AD61]">+</span>
           </button>
           <div class="luxury-faq-content">
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-inter font-normal">
               Santos Home Renovation specializes in kitchen and bathroom remodeling, tile and hardwood flooring, interior and exterior painting, drywall installation, finish carpentry, and general handyman repairs.
             </p>
           </div>
@@ -626,13 +633,13 @@
 
         <div class="luxury-faq-item py-4">
           <button class="luxury-faq-trigger w-full flex items-center justify-between text-left group">
-            <span class="font-manrope font-medium text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
+            <span class="font-bold text-sm sm:text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
               Which regions do you serve in New England?
             </span>
             <span class="luxury-faq-icon text-lg text-[#D5AD61]">+</span>
           </button>
           <div class="luxury-faq-content">
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-inter font-normal">
               We primarily serve Greater Boston and towns throughout Massachusetts, as well as select residential communities across Rhode Island and New Hampshire.
             </p>
           </div>
@@ -640,13 +647,13 @@
 
         <div class="luxury-faq-item py-4">
           <button class="luxury-faq-trigger w-full flex items-center justify-between text-left group">
-            <span class="font-manrope font-medium text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
+            <span class="font-bold text-sm sm:text-base text-white group-hover:text-[#D5AD61] transition-colors pr-4">
               How do I get an estimate for my renovation?
             </span>
             <span class="luxury-faq-icon text-lg text-[#D5AD61]">+</span>
           </button>
           <div class="luxury-faq-content">
-            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-light">
+            <p class="text-xs sm:text-sm text-[#A9B1BA] leading-relaxed pt-3 font-inter font-normal">
               Simply fill out our consultation form below or send a WhatsApp message to +1 (857) 346-7894. We will review your project parameters and schedule an on-site assessment.
             </p>
           </div>
@@ -655,29 +662,29 @@
     </div>
   </section>
 
-  <!-- ==================== CONTACT FORM (Integrated Luxury) ==================== -->
-  <section id="contact" class="py-20 bg-[#0B1725] border-b border-[#D5AD61]/15">
-    <div class="max-w-3xl mx-auto px-6 sm:px-8">
-      <div class="text-center mb-12">
-        <span class="text-xs font-semibold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Contact Us</span>
-        <h2 class="text-3xl sm:text-4xl font-cormorant font-normal text-white mb-3">
+  <!-- ==================== CONTACT FORM ==================== -->
+  <section id="contact" class="py-16 sm:py-20 bg-[#0B1725] border-b border-[#D5AD61]/15">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-10 sm:mb-12">
+        <span class="text-xs font-bold text-[#D5AD61] uppercase tracking-[0.22em] block mb-2">Contact Us</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-2">
           Schedule Your Consultation
         </h2>
-        <p class="text-xs sm:text-sm text-[#A9B1BA] font-light">
+        <p class="text-xs sm:text-sm text-[#A9B1BA] font-inter">
           Connect directly with Luann Santos and our renovation team.
         </p>
       </div>
 
-      <form id="luxury-contact-form" class="space-y-4 bg-[#11263A] p-6 sm:p-8 rounded border border-[#D5AD61]/25">
+      <form id="luxury-contact-form" class="space-y-4 bg-[#11263A] p-5 sm:p-8 rounded-lg border border-[#D5AD61]/25">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="form-name" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+            <label for="form-name" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
               Full Name *
             </label>
             <input type="text" id="form-name" required placeholder="John Miller" class="luxury-input" />
           </div>
           <div>
-            <label for="form-phone" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+            <label for="form-phone" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
               Phone Number *
             </label>
             <input type="tel" id="form-phone" required placeholder="+1 (555) 000-0000" class="luxury-input" />
@@ -686,13 +693,13 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="form-email" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+            <label for="form-email" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
               Email Address
             </label>
             <input type="email" id="form-email" placeholder="name@example.com" class="luxury-input" />
           </div>
           <div>
-            <label for="form-city" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+            <label for="form-city" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
               Location / City *
             </label>
             <input type="text" id="form-city" required placeholder="Boston, MA" class="luxury-input" />
@@ -700,7 +707,7 @@
         </div>
 
         <div>
-          <label for="form-service" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+          <label for="form-service" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
             Service Required *
           </label>
           <select id="form-service" class="luxury-input">
@@ -715,50 +722,49 @@
         </div>
 
         <div>
-          <label for="form-notes" class="block text-[11px] font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider mb-1.5">
+          <label for="form-notes" class="block text-[11px] font-bold text-[#D5AD61] uppercase tracking-wider mb-1.5">
             Project Scope
           </label>
           <textarea id="form-notes" rows="3" placeholder="Brief details about your property and goals..." class="luxury-input resize-y"></textarea>
         </div>
 
-        <button type="submit" class="btn-luxury-gold w-full py-3.5 text-xs tracking-[0.14em] uppercase font-semibold text-[#0B1725] mt-2">
+        <button type="submit" class="btn-luxury-gold w-full py-3.5 text-xs tracking-[0.14em] uppercase font-bold text-[#0B1725] mt-2">
           Continue on WhatsApp →
         </button>
       </form>
     </div>
   </section>
 
-  <!-- ==================== 10. FOOTER — REDESIGN PREMIUM ==================== -->
-  <footer class="bg-[#0B1725] pt-14 pb-8">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <!-- ==================== 10. FOOTER ==================== -->
+  <footer class="bg-[#0B1725] pt-12 sm:pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       
-      <!-- Middle Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 items-start">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-10 sm:pb-12 items-start">
         
-        <!-- Left: Logo & Brief Description -->
-        <div class="space-y-3">
+        <!-- Left: Logo & Description -->
+        <div class="space-y-3 sm:col-span-2 md:col-span-1">
           <img 
             src="/assets/images/santos-logo.png" 
             alt="Santos Home Renovation" 
-            class="h-9 w-auto object-contain brightness-0 invert" 
+            class="h-8 sm:h-9 w-auto object-contain brightness-0 invert" 
           />
-          <p class="text-xs text-[#A9B1BA] leading-relaxed font-light">
+          <p class="text-xs text-[#A9B1BA] leading-relaxed font-inter font-normal">
             Over 10 years of general contractor expertise and residential remodeling in Massachusetts, Rhode Island, and New Hampshire.
           </p>
         </div>
 
-        <!-- Center Left: Contact Info -->
+        <!-- Contact Info -->
         <div class="text-xs space-y-2">
-          <span class="font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider block mb-2">Direct Contact</span>
+          <span class="font-bold text-[#D5AD61] uppercase tracking-wider block mb-2">Direct Contact</span>
           <p class="text-white">Phone / WhatsApp: <a href="https://wa.me/18573467894" class="hover:text-[#D5AD61]">+1 (857) 346-7894</a></p>
           <p class="text-white">Instagram: <a href="https://instagram.com/homereno.santos" target="_blank" rel="noopener noreferrer" class="hover:text-[#D5AD61]">@homereno.santos</a></p>
           <p class="text-[#A9B1BA]">Owner: Luann Santos</p>
         </div>
 
-        <!-- Center Right: Nav Links -->
+        <!-- Nav Links -->
         <div class="text-xs space-y-2">
-          <span class="font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider block mb-2">Navigation</span>
-          <div class="flex flex-col space-y-1.5 text-[#A9B1BA]">
+          <span class="font-bold text-[#D5AD61] uppercase tracking-wider block mb-2">Navigation</span>
+          <div class="flex flex-col space-y-1.5 text-[#A9B1BA] font-inter">
             <a href="#hero" class="hover:text-white transition-colors">Home</a>
             <a href="#services" class="hover:text-white transition-colors">Services</a>
             <a href="#featured-project" class="hover:text-white transition-colors">Our Work</a>
@@ -767,17 +773,17 @@
           </div>
         </div>
 
-        <!-- Right: Service Territories -->
+        <!-- Territories -->
         <div class="text-xs space-y-2">
-          <span class="font-manrope font-semibold text-[#D5AD61] uppercase tracking-wider block mb-2">Service Territories</span>
-          <p class="text-[#A9B1BA]">Massachusetts (Greater Boston)</p>
-          <p class="text-[#A9B1BA]">Rhode Island</p>
-          <p class="text-[#A9B1BA]">New Hampshire</p>
+          <span class="font-bold text-[#D5AD61] uppercase tracking-wider block mb-2">Service Territories</span>
+          <p class="text-[#A9B1BA] font-inter">Massachusetts (Greater Boston)</p>
+          <p class="text-[#A9B1BA] font-inter">Rhode Island</p>
+          <p class="text-[#A9B1BA] font-inter">New Hampshire</p>
         </div>
 
       </div>
 
-      <!-- Bottom Line: 1px Gold Line & Copyright -->
+      <!-- Bottom Line -->
       <div class="pt-6 border-t border-[#D5AD61]/20 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A9B1BA]/70 gap-3">
         <span>© 2026 Santos Home Renovation. All rights reserved.</span>
         <div class="flex items-center gap-6">
