@@ -80,77 +80,56 @@ class SantosReferenceSite {
   }
 
   /**
-   * Section 5: Sticky Step-by-Step Narrative
+   * Section 5 / 10: Step-by-Step Narrative Interactive Switching
    */
   initStickyNarrative() {
     const steps = [
       {
-        num: "01",
-        title: "Project Assessment & Site Evaluation",
-        desc: "We examine the existing structure, evaluate framing, plumbing and electrical conditions, and establish clear measurements.",
+        badge: "01 / 05",
         img: "/assets/images/service-drywall.jpg"
       },
       {
-        num: "02",
-        title: "Preparation, Protection & Demolition",
-        desc: "Floors, adjacent walls and living areas are fully sealed with heavy-duty plastic and ram board before structural demolition begins.",
+        badge: "02 / 05",
         img: "/assets/images/service-carpentry.jpg"
       },
       {
-        num: "03",
-        title: "Rough Framing, MEP & Subfloor Prep",
-        desc: "Precision carpentry, subfloor leveling, and rough mechanicals are installed according to Massachusetts building codes.",
+        badge: "03 / 05",
         img: "/assets/images/service-flooring.jpg"
       },
       {
-        num: "04",
-        title: "Custom Finishes, Tile & Cabinetry",
-        desc: "Handcrafted trim, custom cabinetry, waterproof tile systems, and flawless drywall surfaces are installed with care.",
+        badge: "04 / 05",
         img: "/assets/images/service-bathroom.jpg"
       },
       {
-        num: "05",
-        title: "Final Walkthrough & Quality Sign-Off",
-        desc: "We perform a room-by-room inspection with the homeowner to ensure every fixture, trim seam, and paint line is 100% perfect.",
+        badge: "05 / 05",
         img: "/assets/images/service-kitchen.jpg"
       }
     ];
 
-    const stickySection = document.getElementById('sticky-narrative');
     const imageEl = document.getElementById('narrative-img');
-    const stepItems = document.querySelectorAll('.narrative-step-item');
-    const barEl = document.getElementById('narrative-progress-bar');
     const badgeEl = document.getElementById('narrative-badge');
+    const buttons = document.querySelectorAll('.narrative-step-btn');
 
-    if (!stickySection || !imageEl) return;
+    if (!imageEl || !buttons.length) return;
 
-    ScrollTrigger.create({
-      trigger: stickySection,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const index = Math.min(Math.floor(progress * steps.length), steps.length - 1);
-
-        if (barEl) barEl.style.height = `${progress * 100}%`;
-        if (badgeEl) badgeEl.textContent = `0${index + 1} / 0${steps.length}`;
-
-        stepItems.forEach((item, i) => {
-          if (i === index) {
-            item.classList.add('text-brand-900', 'font-bold');
-            item.classList.remove('opacity-50');
-          } else {
-            item.classList.remove('text-brand-900', 'font-bold');
-            item.classList.add('opacity-50');
-          }
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('bg-white', 'border-[#D3AA64]', 'shadow-sm');
+          b.classList.add('bg-white/70', 'border-transparent');
         });
+        btn.classList.add('bg-white', 'border-[#D3AA64]', 'shadow-sm');
+        btn.classList.remove('bg-white/70', 'border-transparent');
 
-        if (imageEl.getAttribute('data-index') !== String(index)) {
-          imageEl.setAttribute('data-index', String(index));
-          imageEl.src = steps[index].img;
+        if (imageEl && steps[index]) {
+          imageEl.style.opacity = '0.3';
+          setTimeout(() => {
+            imageEl.src = steps[index].img;
+            if (badgeEl) badgeEl.textContent = steps[index].badge;
+            imageEl.style.opacity = '1';
+          }, 150);
         }
-      }
+      });
     });
   }
 

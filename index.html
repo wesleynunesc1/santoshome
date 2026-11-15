@@ -505,75 +505,91 @@
     </div>
   </section>
 
-  <!-- ==================== 10. SEÇÃO STICKY NARRATIVA (HOW WE WORK / 5 STEPS) ==================== -->
-  <section id="sticky-narrative" class="bg-[#EDF0F1] relative">
-    <div class="relative h-[300vh] lg:h-[410vh]">
-      <div class="sticky top-[84px] isolate flex min-h-[calc(100vh-84px)] items-center overflow-hidden py-10">
+  <!-- ==================== 10. SEÇÃO NARRATIVA HOW WE WORK (COMPACTA, FLUIDA & RESPONSIVA) ==================== -->
+  <section id="sticky-narrative" class="bg-[#EDF0F1] py-16 sm:py-20 lg:py-24 border-t border-[#D6DCDD]">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         
-        <div class="mx-auto max-w-[1280px] px-5 sm:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          
-          <!-- Left Column: Step Narratives & Progress Tracker -->
-          <div class="lg:col-span-6 relative pl-6 border-l-2 border-[#D6DCDD]">
-            <!-- Dynamic vertical progress indicator line -->
-            <div id="narrative-progress-bar" class="absolute left-[-2px] top-0 w-[2px] bg-[#D3AA64] h-0 transition-all duration-150"></div>
+        <!-- Left Column: Step Narratives -->
+        <div class="lg:col-span-6">
+          <span class="text-xs font-bold text-[#D3AA64] uppercase tracking-[0.2em] block mb-2">How We Work, Step by Step</span>
+          <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-[#15222D] leading-[1.08] mb-4">
+            A Complete Renovation, <br />From the First Step to the Final Detail.
+          </h2>
+          <p class="text-xs sm:text-sm text-[#65727C] leading-relaxed mb-6">
+            Every successful renovation follows a transparent, organized sequence. Here is how our team manages your property with precision and respect.
+          </p>
 
-            <span class="text-xs font-bold text-[#D3AA64] uppercase tracking-[0.2em] block mb-2">How We Work, Step by Step</span>
-            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-[#15222D] mb-8">
-              A Complete Renovation, <br />From the First Step to the Final Detail.
-            </h2>
-
-            <div class="space-y-6">
-              <div class="narrative-step-item text-[#15222D] font-bold">
-                <span class="text-xs font-mono text-[#D3AA64]">01 / INITIAL</span>
-                <h4 class="text-lg font-bold">Project Assessment & Site Evaluation</h4>
-                <p class="text-xs text-[#65727C] mt-1">We inspect existing framing, plumbing, and structural conditions to define clear scope.</p>
+          <!-- Interactive Clickable / Active Steps -->
+          <div class="space-y-3">
+            
+            <div class="narrative-step-btn group p-3.5 sm:p-4 rounded bg-white border border-[#D3AA64] shadow-sm cursor-pointer transition-all" data-step="0">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono font-bold text-[#D3AA64]">STEP 01</span>
+                <span class="text-[10px] uppercase font-bold text-[#102940] px-2 py-0.5 bg-[#EDF0F1] rounded">Assessment</span>
               </div>
-
-              <div class="narrative-step-item opacity-50 text-[#15222D]">
-                <span class="text-xs font-mono text-[#D3AA64]">02 / PREP</span>
-                <h4 class="text-lg font-bold">Site Protection & Clean Demolition</h4>
-                <p class="text-xs text-[#65727C] mt-1">Adjacent spaces and hardwood floors are isolated with protective membranes.</p>
-              </div>
-
-              <div class="narrative-step-item opacity-50 text-[#15222D]">
-                <span class="text-xs font-mono text-[#D3AA64]">03 / ROUGH-IN</span>
-                <h4 class="text-lg font-bold">Framing, MEP & Subfloor Leveling</h4>
-                <p class="text-xs text-[#65727C] mt-1">Subfloors are leveled to strict tolerances and rough utilities are brought to code.</p>
-              </div>
-
-              <div class="narrative-step-item opacity-50 text-[#15222D]">
-                <span class="text-xs font-mono text-[#D3AA64]">04 / FINISHES</span>
-                <h4 class="text-lg font-bold">Custom Finishes, Tile & Cabinetry</h4>
-                <p class="text-xs text-[#65727C] mt-1">Meticulous tile cuts, waterproof grout, custom trim, and smooth Level 5 drywall.</p>
-              </div>
-
-              <div class="narrative-step-item opacity-50 text-[#15222D]">
-                <span class="text-xs font-mono text-[#D3AA64]">05 / SIGN-OFF</span>
-                <h4 class="text-lg font-bold">Final Review & Complete Satisfaction</h4>
-                <p class="text-xs text-[#65727C] mt-1">Room-by-room walkthrough to ensure every single detail meets our exacting standards.</p>
-              </div>
+              <h4 class="text-sm font-bold text-[#15222D] group-hover:text-[#102940] transition-colors">Project Assessment & Site Evaluation</h4>
+              <p class="text-xs text-[#65727C] mt-1 leading-normal">We inspect framing, plumbing, electrical, and subfloors to build an exact, transparent scope.</p>
             </div>
-          </div>
 
-          <!-- Right Column: Synchronized High-Resolution Imagery -->
-          <div class="lg:col-span-6 relative">
-            <div class="relative overflow-hidden rounded-md border border-[#D6DCDD] shadow-2xl aspect-[4/3] bg-[#0B1D30]">
-              <img 
-                id="narrative-img"
-                src="/assets/images/service-drywall.jpg" 
-                alt="Santos Renovation Step" 
-                class="w-full h-full object-cover transition-opacity duration-300"
-                data-index="0"
-              />
-              <span id="narrative-badge" class="absolute top-4 right-4 bg-[#0B1D30]/90 text-[#D3AA64] font-mono text-xs font-bold px-3 py-1.5 rounded">
-                01 / 05
-              </span>
+            <div class="narrative-step-btn group p-3.5 sm:p-4 rounded bg-white/70 hover:bg-white border border-transparent hover:border-[#D6DCDD] cursor-pointer transition-all" data-step="1">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono font-bold text-[#D3AA64]">STEP 02</span>
+                <span class="text-[10px] uppercase font-bold text-[#102940] px-2 py-0.5 bg-[#EDF0F1] rounded">Protection</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15222D] group-hover:text-[#102940] transition-colors">Site Protection & Clean Demolition</h4>
+              <p class="text-xs text-[#65727C] mt-1 leading-normal">Floors and adjacent living spaces are sealed with protective dust barriers and floor boards.</p>
             </div>
-          </div>
 
+            <div class="narrative-step-btn group p-3.5 sm:p-4 rounded bg-white/70 hover:bg-white border border-transparent hover:border-[#D6DCDD] cursor-pointer transition-all" data-step="2">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono font-bold text-[#D3AA64]">STEP 03</span>
+                <span class="text-[10px] uppercase font-bold text-[#102940] px-2 py-0.5 bg-[#EDF0F1] rounded">Rough-In</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15222D] group-hover:text-[#102940] transition-colors">Framing, MEP & Subfloor Leveling</h4>
+              <p class="text-xs text-[#65727C] mt-1 leading-normal">Subfloors are leveled to strict tolerances and rough utilities are brought to code.</p>
+            </div>
+
+            <div class="narrative-step-btn group p-3.5 sm:p-4 rounded bg-white/70 hover:bg-white border border-transparent hover:border-[#D6DCDD] cursor-pointer transition-all" data-step="3">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono font-bold text-[#D3AA64]">STEP 04</span>
+                <span class="text-[10px] uppercase font-bold text-[#102940] px-2 py-0.5 bg-[#EDF0F1] rounded">Finishing</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15222D] group-hover:text-[#102940] transition-colors">Custom Finishes, Tile & Cabinetry</h4>
+              <p class="text-xs text-[#65727C] mt-1 leading-normal">Meticulous tile cuts, waterproof grout, custom trim, and smooth Level 5 drywall.</p>
+            </div>
+
+            <div class="narrative-step-btn group p-3.5 sm:p-4 rounded bg-white/70 hover:bg-white border border-transparent hover:border-[#D6DCDD] cursor-pointer transition-all" data-step="4">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-mono font-bold text-[#D3AA64]">STEP 05</span>
+                <span class="text-[10px] uppercase font-bold text-[#102940] px-2 py-0.5 bg-[#EDF0F1] rounded">Walkthrough</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15222D] group-hover:text-[#102940] transition-colors">Final Review & Complete Satisfaction</h4>
+              <p class="text-xs text-[#65727C] mt-1 leading-normal">Room-by-room walkthrough with Luann Santos to ensure every single detail is 100% perfect.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Synchronized High-Resolution Imagery -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative overflow-hidden rounded-md border border-[#D6DCDD] shadow-xl aspect-[4/3] bg-[#0B1D30]">
+            <img 
+              id="narrative-img"
+              src="/assets/images/service-drywall.jpg" 
+              alt="Santos Renovation Step" 
+              class="w-full h-full object-cover transition-all duration-500"
+              data-index="0"
+            />
+            <span id="narrative-badge" class="absolute top-4 right-4 bg-[#0B1D30]/90 text-[#D3AA64] font-mono text-xs font-bold px-3 py-1.5 rounded shadow">
+              01 / 05
+            </span>
+          </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
